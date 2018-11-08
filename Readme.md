@@ -12,9 +12,19 @@ Now, they want to build a model to predict the purchase amount of customer again
 4. Tried Linear Regression, SGD Regression, Deep Neural Net, XGBoost
 5. XGBoost works out best with RMSE = 2908
 
-> One-Hot encoding does not give best results with one-hot encoding. Lets try XGBoost without one-hot encoding some categorical variables in Approach 2.
+> Decision Trees does not give best results with one-hot encoding. Lets try XGBoost without one-hot encoding of some categorical variables in Approach 2.
 
 ## Approach 2
 1. Perform Numerical Encoding of all String Features
-2. Hot Encode Product_Category, may not be One Hot.
-3. 
+2. One hot encode only city variable because it has less cardinality.
+3. Replace Null product categories with 0.
+4. Worked with XGBoost, performed hyper-parameter optimization using hyperopt.
+5. This time XGBoost gives RMSE = 2841
+
+> Lets try feature engineering to create some useful features. If possible perform stacking also.
+
+## Approach 3
+1. Perform Numerical Encoding of all String Features
+2. One hot encode only city variable because it has less cardinality.
+3. Replace Null product categories with 0.
+4. 
