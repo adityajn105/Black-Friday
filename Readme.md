@@ -21,10 +21,17 @@ Now, they want to build a model to predict the purchase amount of customer again
 4. Worked with XGBoost, performed hyper-parameter optimization using hyperopt.
 5. This time XGBoost gives RMSE = 2841
 
-> Lets try feature engineering to create some useful features. If possible perform stacking also.
+> Lets try feature engineering to create some useful features. 
 
 ## Approach 3
 1. Perform Numerical Encoding of all String Features
 2. One hot encode only city variable because it has less cardinality.
 3. Replace Null product categories with 0.
-4. 
+4. Remove samples with purchase that lies in outliers, consider only upto 99.5 percentile.
+5. Keep User_ID, Product_ID and label encode them. Replace new Product_ID in test data with -1
+6. Find best hyperparameters with hyperopt for xgboost and then train it.
+7. This time XGBoost gives RMSE = 2516
+
+> 
+
+## Approach 4
